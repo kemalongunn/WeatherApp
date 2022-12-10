@@ -1,0 +1,33 @@
+export const weatherStateList = 
+  {
+    0: "Açık",
+    1: "Çoğunlukla Açık",
+    2: "Parçalı Bulutlu",
+    3: "Bulutlu",
+    4: "Kapalı Bulutlu",
+    45: "Sisli",
+    48: "Kırağı Oluşturan Sisli",
+    51: "Hafif Çiseli",
+    53: "Orta Çiseli",
+    55: "Yoğun Çiseli",
+    56: "Dondurucu Hafif Çiseli",
+    57: "Dondurucu Yoğun Çiseli",
+    61: "Hafif Yağmur Yağışlı",
+    63: "Orta Yağmur Yağışlı",
+    65: "Yoğun Yağmur Yağışlı",
+    66: "Dondurucu Hafif Yağmur Yağışlı",
+    67: "Dondurucu Yoğun Yağmur Yağışlı",
+    71: "Hafif Kar Yağışlı",
+    73: "Orta Kar Yağışlı",
+    75: "Yoğun Kar Yağışlı",
+    77: "Donmuş Kar",
+    80: "Hafif Sağanak Yağışlı",
+    81: "Orta Sağanak Yağışlı",
+    82: "Şiddetli Sağanak Yağışlı",
+    85: "Hafif Sağanak Kar Yağışlı",
+    86: "Yoğun Sağanak Kar Yağışlı",
+    95: "Hafif/Orta Fırtınalı",
+    96: "Hafif Dolu Yağışı",
+    99: "Yoğun Dolu Yağışı"
+  }
+

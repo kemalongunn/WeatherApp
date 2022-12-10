@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import { CityContextProvider } from "../contexts/cityContext";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <CityContextProvider>
+      <Component {...pageProps} />
+    </CityContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
