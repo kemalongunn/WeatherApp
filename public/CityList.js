@@ -64,15 +64,15 @@ export const citylist = [
     label: "Bursa",
   },
   {
-    value: "Çanakkale",
+    value: "Canakkale",
     label: "Çanakkale",
   },
   {
-    value: "Çankiri",
+    value: "Cankiri",
     label: "Çankırı",
   },
   {
-    value: "Çorum",
+    value: "Corum",
     label: "Çorum",
   },
   {
@@ -88,7 +88,7 @@ export const citylist = [
     label: "Edirne",
   },
   {
-    value: "Elâzig",
+    value: "Elazig",
     label: "Elâzığ",
   },
   {
@@ -136,7 +136,7 @@ export const citylist = [
     label: "İstanbul",
   },
   {
-    value: "İzmir",
+    value: "Izmir",
     label: "İzmir",
   },
   {
@@ -248,7 +248,7 @@ export const citylist = [
     label: "Tunceli",
   },
   {
-    value: "sanliurfa",
+    value: "Sanliurfa",
     label: "Şanlıurfa",
   },
   {
@@ -280,8 +280,8 @@ export const citylist = [
     label: "Karaman",
   },
   {
-    value: "Kırıkkale",
-    label: "Kirikkale",
+    value: "Kirikkale",
+    label: "Kırıkkale",
   },
   {
     value: "Batman",
