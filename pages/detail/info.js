@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { CityContext } from "../../contexts/cityContext";
 import { weatherStateList } from "../../public/WeatherTranslations";
+import { notify } from "../_app";
 
 function info() {
-  const { city } = useContext(CityContext);
+  const router = useRouter()
+  const { city } = router.query;
 
   const axios = require("axios");
 
@@ -17,46 +21,48 @@ function info() {
   const [weatherImageId, setWeatherImageId] = useState("")
 
   useEffect(() => {
-    // let url = `https://api.openweathermap.org/data/2.5/weather?q=Ankara&appid=6468b5c1e89fd233d9e753be147a0060`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=6468b5c1e89fd233d9e753be147a0060`;
+   if(city && city.length > 0){
+     // let url = `https://api.openweathermap.org/data/2.5/weather?q=Ankara&appid=6468b5c1e89fd233d9e753be147a0060`;
+     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6468b5c1e89fd233d9e753be147a0060`;
 
-    axios.get(url).then((response) => {
-      console.log("data : ", response.data);
-
-      let data = response.data;
-
-      let dataCity = data.name;
-
-      let weather = data.weather[0];
-
-      let main = data.main;
-
-      let temp = kelvinToCelcius(main.temp);
-
-      let tempMax = kelvinToCelcius(main.temp_max);
-
-      let tempMin = kelvinToCelcius(main.temp_min);
-
-      setTempInfo({
-        temp: temp,
-        max: tempMax,
-        min: tempMin,
-      });
-
-      let id = weather.id;
-
-      let descriptionId = id - 800;
-
-      let description = weatherStateList[descriptionId];
-
-      setWeatherInfo(description);
-
-      setWeatherImageId(descriptionId);
-
-      setCityName(dataCity)
-
-    });
-  }, []);
+     axios.get(url).then((response) => {
+       console.log("data : ", response.data);
+ 
+       let data = response.data;
+ 
+       let dataCity = data.name;
+ 
+       let weather = data.weather[0];
+ 
+       let main = data.main;
+ 
+       let temp = kelvinToCelcius(main.temp);
+ 
+       let tempMax = kelvinToCelcius(main.temp_max);
+ 
+       let tempMin = kelvinToCelcius(main.temp_min);
+ 
+       setTempInfo({
+         temp: temp,
+         max: tempMax,
+         min: tempMin,
+       });
+ 
+       let id = weather.id;
+ 
+       let descriptionId = id - 800;
+ 
+       let description = weatherStateList[descriptionId];
+ 
+       setWeatherInfo(description);
+ 
+       setWeatherImageId(descriptionId);
+ 
+       setCityName(dataCity)
+       notify();
+     });
+   }
+  }, [city]);
 
   const kelvinToCelcius = (kelvin) => {
     let celciusValue = kelvin - 273.15;
@@ -134,7 +140,6 @@ function info() {
        </div>
 
     </div>
-
     
   );
 }
